@@ -43,5 +43,9 @@ pipeline {
 				subject: 'Build Summary for ${JOB_NAME}', 
 				to: 'sufa.0726@gmail.com'
 			}
+		success {
+			sh "java -Dserver.port=8081 -jar target/spring-petclinic-2.5.0-SNAPSHOT.jar"
+			
+		}
 	}			
 }
