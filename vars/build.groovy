@@ -1,4 +1,4 @@
-def call(String BUILD_NAME) {
+def call(String BUILD_TYPE) {
     node {
         sh "echo 'Performing Action - ${BUILD_TYPE}'"
 		sh "chmod +x mvnw"
