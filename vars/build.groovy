@@ -1,10 +1,12 @@
-def call(String BUILD_TYPE) {
+def call(String BUILD_TYPE, String PWD) {
     node {
         sh "echo 'Performing Action - ${BUILD_TYPE}'"
         sh "pwd"
         sh "ls -ltr"
-		sh "chmod +x ../mvnw"
+        sh "ls -ltr ${PWD}"
+		sh "chmod +x ${PWD}/mvnw"
 		sh "ls -ltr"
-		sh "../mvnw ${BUILD_TYPE}"
+        sh "ls -ltr ${PWD}"
+		sh "${PWD}/mvnw ${BUILD_TYPE}"
     }
 }
