@@ -7,6 +7,7 @@ def call(String BUILD_TYPE, String PWD) {
 		sh "chmod +x ${PWD}/mvnw"
 		sh "ls -ltr"
         sh "ls -ltr ${PWD}"
-		sh "${PWD}/mvnw ${BUILD_TYPE}"
+        sh "cd ${PWD}"
+		sh "./mvnw ${BUILD_TYPE}"
     }
 }
